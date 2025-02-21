@@ -13,7 +13,7 @@ namespace entity_frameWork3
        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server=LAPTOP-D1ALO0LH\\MSSQLSERVER02;Database=CompanyDB;Trusted_Connection=True;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("Server=LAPTOP-D1ALO0LH\\MSSQLSERVER02;Database=CompanyDB;Trusted_Connection=True;TrustServerCertificate=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,6 +38,9 @@ namespace entity_frameWork3
 
             modelBuilder.Entity<StudentCourse>()
                 .HasKey(sc => new { sc.StudentId, sc.CourseId });
+
+            modelBuilder.Entity<Department>()
+                        .HasKey(d => d.DeptId);
         }
 
 

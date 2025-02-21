@@ -10,8 +10,8 @@ namespace entity_frameWork3
 
             #region
             //Explicit Loading
-            CompanyDBContext context = new CompanyDBContext();
-            //var Department = (from D in context.Departments        
+            //CompanyDBContext context = new CompanyDBContext();
+            //var Department = (from D in context.Departments
             //                  where D.DeptId == 10
             //                  select D).FirstOrDefault();
             //context.Entry(Department).Collection(D => D.Employees).Load();
@@ -26,16 +26,16 @@ namespace entity_frameWork3
             //context.Entry(Employee).Reference(e => e.Department).Load();
 
             //Console.WriteLine($"EmployeeId = {Employee.Id} , EmployeeName = {Employee.Name} , DepartmentName = {Employee.Department.Name}");
-            //Eager Loading
-            var department = (from D in context.Departments.Include(D => D.Employees)
-                              where D.DeptId == 10
-                              select D).FirstOrDefault();
-            foreach (var E in department.Employees)
-                Console.WriteLine(E.Name);
+            ////Eager Loading
+            //var department = (from D in context.Departments.Include(D => D.Employees)
+            //                  where D.DeptId == 10
+            //                  select D).FirstOrDefault();
+            //foreach (var E in department.Employees)
+            //    Console.WriteLine(E.Name);
 
-            var employee = (from E in context.Employees.Include(E => E.Department)
-                            where E.Id == 1
-                            select E).FirstOrDefault();
+            //var employee = (from E in context.Employees.Include(E => E.Department)
+            //                where E.Id == 1
+            //                select E).FirstOrDefault();
 
 
 

@@ -17,7 +17,7 @@ namespace entity_frameWork3.Models
         public int CourseId { get; set; }
         public int grade { get; set; }
 
-        public virtual Course Course { get; set; }
-        public virtual Student Student { get; set; }
+        public  Course Course { get; set; }
+        public  Student Student { get; set; }
     }
 }
